@@ -1,4 +1,29 @@
-data/
-.vscode/
+# Ambientes Virtuais e Dependências Locais
 venv/
 .venv/
+
+# Configurações de IDEs e Editores
+.vscode/
+.idea/
+
+# Dados Locais e Arquivos Temporários
+data/
+
+# Logs de execução local (backfill, cargas manuais)
+logs/
+
+# Tracking/artefatos locais do MLflow (fallback de dev — ver src/core/tracker.py)
+mlruns/
+mlartifacts/
+mlruns.db
+
+# Cache do Python
+__pycache__/
+*.pyc
+*.pyo
+__pytestcache__/
+
+# Arquivos de Configuração com Credenciais (Segurança)
+.env
+
+Claude.md
