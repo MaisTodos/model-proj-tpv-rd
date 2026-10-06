@@ -1,0 +1,43 @@
+# Controlo de Versão e CI/CD
+.git/
+.gitignore
+.github/
+
+# Cache do Python e Testes
+__pycache__/
+*.py[cod]
+*$py.class
+.pytest_cache/
+.coverage
+htmlcov/
+tests/
+
+# Ambientes Virtuais
+venv/
+env/
+.venv/
+Pipfile.lock
+
+# IDEs
+.vscode/
+.idea/
+
+# Jupyter e Artefatos Locais
+notebooks/
+.ipynb_checkpoints/
+mlruns/
+*.parquet
+*.csv
+*.json
+# Documentação, Metadados e IDEs
+docs/
+*.md
+mkdocs.yml
+.vscode/
+.idea/
+.DS_Store
+
+# Dados Locais Efêmeros e Saídas de Teste
+/tmp/
+output/
+*.parquet

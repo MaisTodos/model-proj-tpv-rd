@@ -1,0 +1,21 @@
+name: Docker Build
+
+on:
+  push:
+    branches: [main, develop]
+    paths: ["docker/**", "src/**", "requirements.txt", "project.yml"]
+  pull_request:
+    branches: [main, develop]
+    paths: ["docker/**", "src/**", "requirements.txt", "project.yml"]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: docker/build-push-action@v6
+        with:
+          context: .
+          file: docker/Dockerfile
+          push: false

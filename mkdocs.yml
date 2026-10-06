@@ -1,0 +1,19 @@
+site_name: Template de modelos ML
+site_description: Template para desenvolvimento de modelos de Machine Learning
+  da MaisTodos, com pipelines de feature engineering, treino e inferência batch
+  padronizados.
+
+plugins:
+  - techdocs-core
+
+nav:
+  - Inicio & Quickstart: index.md
+  - Comandos de Execução: comandos.md
+  - Decisões Arquiteturais (ADRs):
+      - Template de ADR: adr-template.md
+      - 001 - Observabilidade com Datadog: adr/001-obeservabilidade-datadog.md
+      - 002 - Classes Base Abstratas: adr/002-abstract-base-classes.md
+      - 003 - Tracking de Experimentos: adr/003-experiment-tracking.md
+      - 004 - Gestão do Ciclo de Vida: adr/004-gestao-ciclo-vida.md
+      - 005 - Armazenamento e Monitoramento de Inferência: adr/005-armazenamento-inferencia.md
+      - 006 - Métricas de Infraestrutura: adr/006-metricas-infra.md
