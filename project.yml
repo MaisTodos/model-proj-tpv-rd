@@ -1,0 +1,33 @@
+# Nome do projeto (caracteres minúsculos e sublinhados)
+# Utilizado internamente para compor o nome do experimento no MLflow (ADR-003)
+name: 'ml_template_model'
+version: '1.0.0'
+owner: 'squad_data_science'
+
+# Configurações de Rastreamento (MLflow)
+tracking:
+  experiment_name: 'exp_ml_template_model'
+
+# Variáveis de modelagem
+target: "target_column"
+# Deixe vazia para usar todas as colunas que saem do preprocessor (exceto o target) — necessário
+# quando o preprocessor renomeia colunas (ex: one-hot encoding, como no TemplatePreprocessor).
+# Preencha explicitamente só se o preprocessor preservar os nomes originais das colunas.
+features: []
+
+# Configuração da Fonte de Dados
+data:
+  query_file: 'src/sql/extract_features.sql'
+  inference_query_file: 'src/sql/extract_inference.sql'
+
+# Contratos da Camada Analítica (Cientista de Dados)
+model_entrypoint:
+  module: 'src.models.model'
+  preprocessor_class: 'TemplatePreprocessor'
+  model_class: 'TemplateModelTrainer'
+
+# Orquestração de Jobs (Mapeamento dos scripts)
+pipelines:
+  feature_engineering: 'src/config/feature.py'
+  training: 'src/config/train.py'
+  inference: 'src/config/predict.py'
